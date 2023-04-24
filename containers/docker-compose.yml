@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  node:
+    build: ./nodeJS
+    container_name: "node"
+    restart: always
+    tty:  true
+    volumes:
+      - home_js:/home/leo
+
+volumes:
+  home_js:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${HOME}/00_javaScript
