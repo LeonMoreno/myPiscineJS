@@ -15,4 +15,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ${HOME}/00_javaScript
+      device: ${HOME}/00_myPiscineJS
