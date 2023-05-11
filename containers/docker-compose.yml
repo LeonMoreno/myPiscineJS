@@ -6,8 +6,13 @@ services:
     container_name: "node"
     restart: always
     tty:  true
+    networks:
+      - br-net
     volumes:
-      - home_js:/home/leo
+      - home_js:/ft_transcendence
+    ports:
+      - 80:80
+      - 3000:3000
 
 volumes:
   home_js:
@@ -15,4 +20,12 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ${HOME}/00_myPiscineJS
+      device: ${HOME}/ft_transcendence
+
+networks:
+    br-net:
+      name: br-net
+      # driver: bridge
+      # ipam:
+      #   config:
+      #    - subnet: 172.16.0.0/28
