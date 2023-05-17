@@ -3,10 +3,10 @@ FROM node:20-alpine3.16
 RUN npm i -g @nestjs/cli \
     && apk --update add --no-cache git
 
-WORKDIR /ft_transcendence
+WORKDIR /app/nestjs-api-tutorial
 
-ENV PATH /ft_transcendence/node_modules/.bin:$PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-# ENTRYPOINT [ "npm", "run", "start:dev"]
+ENTRYPOINT [ "yarn", "start:dev"]
 
-ENTRYPOINT ["/bin/ash" ]
+# ENTRYPOINT ["/bin/ash" ]
