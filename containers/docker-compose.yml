@@ -4,12 +4,16 @@ services:
   node:
     build: ./nodeJS
     container_name: "node"
-    restart: always
+    #    restart: always
     tty:  true
     networks:
       - br-net
     volumes:
+<<<<<<< HEAD
       - home_js:/app
+=======
+      - home_js:/home/leo
+>>>>>>> f4be77a (Arch)
     ports:
       - 80:80
       - 3000:3000
@@ -20,7 +24,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
+<<<<<<< HEAD
       device: ${HOME}/00_myPiscineJS
+=======
+      device: ${HOME}/00_javaScript
+>>>>>>> f4be77a (Arch)
 
 networks:
     br-net:
