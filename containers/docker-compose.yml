@@ -2,17 +2,28 @@ version: '3.8'
 
 services:
   node:
-    build: ./nodeJS
+    build: ./google_OAuth
     container_name: "node"
     restart: always
     tty:  true
     networks:
       - br-net
     volumes:
-      - home_js:/app
+      - home_js:/app/google_auth
     ports:
-      - 80:80
       - 3000:3000
+      - 5555:5555
+  # database:
+  #   container_name: db
+  #   image: postgres:15-alpine
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: 123
+  #     POSTGRES_DB: nest
+  #   networks:
+  #     - br-net
 
 volumes:
   home_js:
@@ -20,7 +31,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ${HOME}/00_myPiscineJS
+      device: ${HOME}/00_myPiscineJS/google_auth
 
 networks:
     br-net:
