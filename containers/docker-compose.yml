@@ -4,7 +4,7 @@ services:
   node:
     build: ./google_OAuth
     container_name: "node"
-    restart: always
+    #    restart: always
     tty:  true
     networks:
       - br-net
